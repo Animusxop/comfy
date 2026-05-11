@@ -1,0 +1,464 @@
+{
+  "id": "bcf22227-ee8f-4ca5-8398-e9a5726db11c",
+  "revision": 0,
+  "last_node_id": 9,
+  "last_link_id": 15,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "VAEEncode",
+      "pos": [
+        479.20001220703125,
+        274.6000213623047
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 10
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.21.0",
+        "Node name for S&R": "VAEEncode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        1573.32322595842,
+        129.37900536946088
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 13
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.21.0",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        165.77094918324633,
+        430.0987978917132
+      ],
+      "size": [
+        282.798828125,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            10
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.21.0",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "grok-image-c543d9fb-f25f-4680-aadc-bfac023b36cc.png",
+        "image"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "CLIPTextEncode",
+      "pos": [
+        759.3869499930535,
+        631.470871657529
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.21.0",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "clothes, clothing, bra, top, dress, fabric on chest, covered breasts, censored, bar, underwear, bikini, modesty, different face, deformed face, changed face, altered facial features, wrong face, different eyes, wrong eye shape, different eye color, wrong eyebrows, different smile, bad teeth, deformed teeth, different makeup, lipstick change, altered hair, different hairstyle, hair color change, wrong skin tone, darker skin, tanned skin, yellow skin, plastic skin, blurry face, low quality face, mutated face, extra limbs, bad anatomy, deformed hands, deformed arms, extra fingers, fused fingers, wrong pose, different angle, different background, different room, different lighting, harsh lighting, dark lighting, overexposed, underexposed, cartoon, anime, painting, illustration, 3d render, cgi, blurry, low resolution, artifacts, watermark, text, logo, deformed breasts, ugly breasts, extra breasts, bad breast anatomy, plastic breasts, barbie doll, doll-like, different face, wrong face, changed face, altered face, different ethnicity, different race, non-indian face, caucasian face, arab face, east asian face, latina face, deformed face, mutated face, bad face, ugly face, extra facial features, wrong facial features, different eyes, wrong eye shape, wrong eye color, different eyebrows, wrong eyebrows, different nose, different lips, different jawline, different cheekbones, smile changed, teeth changed, makeup changed, different hair, wrong skin tone, darker skin, tanned skin, yellowish skin, plastic skin, barbie face, doll face, ai face, low quality face, blurry face, artifacts on face, face asymmetry, wrong age, different person, celebrity face, unrecognizable face, face swap, different hairs, different body features, unreaslistic face,different face, wrong face, changed ethnicity, east asian face, korean face, chinese face, different race, different person, different eyes, wrong eye shape, wrong eyebrows, different smile, different teeth, different makeup, different hair, different skin tone, tanned skin, darker skin, yellow skin, plastic skin, barbie face, deformed face, low quality face, different background, different room, different ceiling, different curtains, different lighting, harsh lighting, overexposed, underexposed, outdoor, sky, window, extra objects, clothes on chest, bra, covered breasts, bad anatomy, deformed breasts, ugly breasts, blurry, artifacts, cartoon, anime, 3d render, different face, wrong face, face swap, different ethnicity, east asian, korean, chinese, caucasian, altered facial features, wrong eyes, wrong eyebrows, different smile, different teeth, different hair, different skin tone, darker skin, yellowish skin, plastic skin, barbie face, different background, different room, different ceiling, different curtains, different lighting, different tattoos, clothes on breasts, bra, covered chest, deformed breasts, bad anatomy, low quality, blurry face, artifacts, cartoon, anime, 3d, render, overexposed, underexposed"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": [
+        1771.3374102327336,
+        325.58993809540294
+      ],
+      "size": [
+        270,
+        270
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 15
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.21.0"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CLIPTextEncode",
+      "pos": [
+        754.1600537822643,
+        368.32946128497116
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.21.0",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Exact same Indian girl from the very first reference photo, 100% identical face, facial features, eyes, makeup, skin tone, identical facial structure, identical eye shape and color, identical eyebrows, identical smile, identical teeth, identical makeup, identical wavy dark brown hair with light ends, exact same milky white fair skin tone, exact same leaf tattoo on upper chest, exact same small tattoo on right arm, exact same silver heart necklace, selfie pose, completely topless, large full beautiful natural breasts with perfect shape, soft realistic skin texture, puffy pink nipples, exact same pink room, exact same blue ceiling, exact same curtains, exact same lighting and shadows, photorealistic, ultra detailed. make her nude her perfect humongous boobs"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "KSampler",
+      "pos": [
+        1282.058545825973,
+        316.0583392145283
+      ],
+      "size": [
+        270,
+        262
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 7
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 5
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.21.0",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        248517159921150,
+        "randomize",
+        40,
+        6,
+        "dpmpp_2m_sde_heun_gpu",
+        "simple",
+        0.45
+      ]
+    },
+    {
+      "id": 1,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        163.16464313270177,
+        105.13310864282491
+      ],
+      "size": [
+        270,
+        98
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            7
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            8,
+            9
+          ]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            12,
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.21.0",
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "lustifySDXLNSFW_apexV8.safetensors"
+      ]
+    }
+  ],
+  "links": [
+    [
+      4,
+      3,
+      0,
+      7,
+      3,
+      "LATENT"
+    ],
+    [
+      5,
+      4,
+      0,
+      7,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      6,
+      5,
+      0,
+      7,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      7,
+      1,
+      0,
+      7,
+      0,
+      "MODEL"
+    ],
+    [
+      8,
+      1,
+      1,
+      4,
+      0,
+      "CLIP"
+    ],
+    [
+      9,
+      1,
+      1,
+      5,
+      0,
+      "CLIP"
+    ],
+    [
+      10,
+      2,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      12,
+      1,
+      2,
+      3,
+      1,
+      "VAE"
+    ],
+    [
+      13,
+      7,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      14,
+      1,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      15,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Group",
+      "bounding": [
+        1707.2184425309206,
+        793.6403716002903,
+        140,
+        80
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.0126228852066892,
+      "offset": [
+        -821.4663262146149,
+        -127.38068533373334
+      ]
+    },
+    "frontendVersion": "1.43.18"
+  },
+  "version": 0.4
+}
